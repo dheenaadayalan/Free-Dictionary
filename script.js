@@ -21,7 +21,10 @@ data
     meaning.innerHTML = imgData[0].meanings[0].definitions[0].definition;
     more.setAttribute("href", imgData[0].sourceUrls);
   })
-  .catch((error)=>console.log(error))
+  .catch((error)=>{
+    title.innerHTML = error;
+    console.log(error)
+  })
 
 function getData() {
   let word = document.getElementById("word").value;
